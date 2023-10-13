@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Clinic.Models;
+using Microsoft.Extensions.Configuration;
+using Factory.Models;
 
-namespace Clinic
+namespace Factory
 {
   class Program
   {
@@ -14,7 +15,7 @@ namespace Clinic
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<ClinicContext>(
+      builder.Services.AddDbContext<FactoryContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]

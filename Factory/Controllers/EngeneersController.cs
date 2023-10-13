@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Factory.Controllers
 {
-  public class DoctorsController : Controller
+  public class EngineerController : Controller
   {
     private readonly FactoryContext _db;
 
-    public DoctorsController(FactoryContext db)
+    public EngineerController(FactoryContext db)
     {
       _db = db;
     }
