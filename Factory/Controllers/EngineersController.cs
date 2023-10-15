@@ -76,7 +76,7 @@ namespace Factory.Controllers
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(en => en.EngineerId == id);
       _db.Engineers.Delete(thisEngineer);
       _db.SaveChanges();
-      return RedirectToAction("Index")
+      return RedirectToAction("Index");
     }
   }
 }

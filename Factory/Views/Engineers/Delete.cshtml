@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Factory.Model.Engineer
+@model Factory.Models.Engineer;
 
 <div class ="container">
 
@@ -13,8 +13,9 @@
   @Html.DisplayFor(model => model.Specialty)
   @using (Html.BeginForm())
   {
-    <input type="submit" value="Yes, delete profile" /> @Html.ActionLink($"No, back to {@Html.DisplayFor(model => model.Name)} profile", "Details", new { id = Model.EngineerId })
-  }
+    <input type="submit" value="Yes, delete profile" />
+    }
+    @Html.ActionLink($"No, back to {@Html.DisplayFor(model => model.Name)} profile", "Details", new { id = Model.EngineerId })
 
   <div class="link-card">
     @Html.ActionLink("Show all engineers", "Index")

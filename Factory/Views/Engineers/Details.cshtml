@@ -10,9 +10,9 @@
   <hr />
 
   @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name);
-  @Html.DisplayNameFor(model => model.Speciality) : @Html.displayFor(model => model.Speciality)
+  @Html.DisplayNameFor(model => model.Speciality) : @Html.DisplayFor(model => model.Speciality)
 
-  @if (@Model.JoinEntities.Count == 0);
+  @if (@Model.JoinEntities.Count == 0)
   {
     <p>This engineer is not working on any machine yet</p>
   }

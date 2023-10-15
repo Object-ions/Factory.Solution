@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Factory.Model.Engineer
+@model Factory.Models.Engineer;
 
 <div class="container">
 
@@ -11,9 +11,13 @@
 
   @using (Html.BeginForm())
   {
-    @Html.LabelFor()
-    @Html.TextBoxFor()
-    @Html.ValidationMessageFor()
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    @Html.ValidationMessageFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Specialty) 
+    @Html.TextBoxFor(model => model.Specialty)
+    @Html.ValidationMessageFor(model => model.Specialty)
 
     <input type="submit" value="Save" />
   }
