@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Factory.Controllers
 {
-  public class EngineerController : Controller
+  public class EngineersController : Controller
   {
     private readonly FactoryContext _db;
 
@@ -59,7 +59,7 @@ namespace Factory.Controllers
     [HttpPost]
     public ActionResult Edit(Engineer engineer)
     {
-      _db.Engineers.Edit(engineer);
+      _db.Engineers.Update(engineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -74,7 +74,7 @@ namespace Factory.Controllers
     public ActionResult DeleteConfirm(int id)
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(en => en.EngineerId == id);
-      _db.Engineers.Delete(thisEngineer);
+      _db.Engineers.Remove(thisEngineer);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

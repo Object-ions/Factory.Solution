@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Factory.Controllers
 {
-  public class MachineController : Controller
+  public class MachinesController : Controller
   {
     private readonly FactoryContext _db;
 
@@ -23,7 +23,10 @@ namespace Factory.Controllers
 
     public ActionResult Details(int id)
     {
-      Machine thisMachine = _db.Machines.Include(m => m.JoinEntities).ThenInclude(j => j.Machine).FirstOrDefault(m => m.MachineId == id);
+      Machine thisMachine = _db.Machines
+                      .Include(m => m.JoinEntities)
+                      .ThenInclude(j => j.Engineer)
+                      .FirstOrDefault(m => m.MachineId == id);
       return View(thisMachine);
     }
 
@@ -63,7 +66,7 @@ namespace Factory.Controllers
 
     public ActionResult Delete(int id)
     {
-      Machine thisMachine = _db.Machines.FirstOrDefault(m => m.MachineId = id);
+      Machine thisMachine = _db.Machines.FirstOrDefault(m => m.MachineId == id);
       return View(thisMachine);
     }
 
