@@ -60,6 +60,20 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    
+
+    public ActionResult Delete(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(m => m.MachineId = id);
+      return View(thisMachine);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(m => m.MachineId == id);
+       _db.Machines.Remove(thisMachine);
+       _db.SaveChanges();
+       return RedirectToAction("Index");
+    }
   }
 }
