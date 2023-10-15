@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+
+  <h2>Edit profile</h2>
+  <hr/>
+
+  <h3>Edit @Html.DisplayFor(model => model.Name) info<h3>
+  
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditFor(model => model.Name)
+    
+    @Html.LabelFor(model => model.Speciality)
+    @Html.EditFor(model => model.Speciality)
+
+    <input type="submit" value="Save" />
+  }
+
+  <div class="link-card">
+    @Html.ActionLink("Delete engineer's profile", "Delete", new { id = Model.EngineerId})
+    @Html.ActionLink("Back to all engineers list", "Index")
+    <br />
+    @Html.ActionLink("Back to main page", "Index", "Home")
+  </div>
+
+<div>
