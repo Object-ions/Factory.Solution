@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<div class="container">
+  <h2>Edit Machine</h2>
+  <hr/>
+
+  <h3>Edit @Html.DisplayFor(model => model.Name) info:</h3>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.MachineId)
+    @Html.LabelFor(model => model.Name)
+    @Html.EditFor(model => model.Name)
+
+    <input type="submit" value="Save" />
+  }
+
+  <div class="link-card">
+    <p>@Html.ActionLink("back to machines list", "Index")</p>
+    <p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+  </div>
+
+</div>

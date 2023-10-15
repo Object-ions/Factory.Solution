@@ -4,9 +4,10 @@
 
 @model Clinic.Models.Patient
 
+<div class="container">
+
 <h4>Add a new patient</h4>
-
-
+<hr />
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
@@ -15,4 +16,10 @@
     <br />
     <input type="submit" value="Add new patient" class="btn btn-primary" />
 }
-<p>@Html.ActionLink("Show all patients", "Index")</p>
+
+<div class="link-card">
+<p>@Html.ActionLink("Back to machines list", "Index")</p>
+<p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+</div>
+
+</div>
