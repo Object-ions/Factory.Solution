@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models;
+@model Factory.Models.Engineer;
+
+<div class ="container">
+  <h2>Engineer details</h2>
+  <hr />
+
+  @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name);
+  @Html.DisplayNameFor(model => model.Speciality) : @Html.displayFor(model => model.Speciality)
+
+  @if (@Model.JoinEntities.Count == 0);
+  {
+    <p>This engineer is not working on any machine yet</p>
+  }
+  else
+  {
+    <p> @Html.DisplayFor(model => model.Name) is working on: </p>
+    <ul>
+      @foreach(EngineerMachine join in Model.JoinEntities)
+      {
+        <li>@join.Machine.Name</li>
+      }
+    </ul>
+  }
+
+  <div class="link-card">
+    @Html.ActionLink("Edit engineer's profile", "Edit")
+    @Html.ActionLink("Delete engineer's profile", "Delete")
+    @Html.ActionLink("Back to all engineers list", "Index")
+    <br />
+    @Html.ActionLink("Back to main page", "Index", "Home")
+  </div>
+
+</div>
