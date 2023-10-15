@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Model.Engineer
+
+<div class="container">
+
+  <h2>Add a new engineer</h2>
+  <hr />
+
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor()
+    @Html.TextBoxFor()
+    @Html.ValidationMessageFor()
+
+    <input type="submit" value="Save" />
+  }
+
+  <div class="link-card">
+    @Html.ActionLink("Show all engineers", "Index")
+    @Html.ActionLink("Main Page", "Index", "Home")
+  </div>
+</div>

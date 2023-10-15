@@ -39,7 +39,7 @@ namespace Factory.Controllers
       {
         return View(machine);
       }
-      
+      else
       {
         _db.Machines.Add(machine);
         _db.SaveChanges();
