@@ -1,12 +1,42 @@
 @{
   Layout = "_Layout";
 }
-<div class="container">
 
-  <div>
-    
+@using Factory.Models;
+
+<h2>Welcome!</h2>
+<div class="splash-container">
+
+  <div class="item">
+    <h4>List of Engineers:</h4>
+    @if (Model["engineers"].Length == 0)
+    {
+      <p>No engineers have been added yet!</p>
+    } 
+    <ul>
+      @foreach (Engineer engineer in Model["engineers"])
+      {
+        <li>@Html.ActionLink(@engineer.Name, "Details", "Engineers", new { id = @engineer.EngineerId})</li>
+      }
+    </ul>
   </div>
 
-  <p>@Html.ActionLink("See all engineers", "Index", "Engineers")</p>
-  <p>@Html.ActionLink("See all machines", "Index", "Machines")</p>
+  <div class="item">
+    <h4>List of Machines:</h4>
+    @if (Model["machines"].Length == 0)
+    {
+      <p>No machines have been added yet!</p>
+    } 
+    <ul>
+      @foreach (Machine machine in Model["machines"])
+      {
+        <li>@Html.ActionLink(@machine.Type, "Details", "machines", new { id = @machine.MachineId})</li>
+      }
+    </ul>
+  </div>
+
+</div>
+<div class="link-card">
+  <p>@Html.ActionLink("Manage engineers", "Index", "Engineers")</p>
+  <p>@Html.ActionLink("Manage machines", "Index", "Machines")</p>
 </div>
