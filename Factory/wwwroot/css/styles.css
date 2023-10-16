@@ -110,13 +110,32 @@ a:hover {
   color: #f1f8ff;
 }
 
-input {
+input[type="submit"]:hover {
+  background-color: #19344d;
+  color: #f1f8ff;
+}
+
+select, input {
   border: 2px solid #f0f0f0;
   border-radius: 5px;
   padding: 10px;
   font-size: 14px;
   display: block;
   width: 100%;
+}
+
+input[type="submit"] {
+  margin: 0 auto;
+  cursor: pointer;
+  border: 1px solid #19344d;
+  background-color: #f1f8ff;
+  border-radius: 4px;
+  color: #19344d;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 35px;
 }
 
 small {
