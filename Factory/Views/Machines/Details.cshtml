@@ -21,13 +21,19 @@
     <ul>
       @foreach (EngineerMachine join in Model.JoinEntities)
       {
-        <li>@join.Engineer.Name</li>
+        <li>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</li>
       }
     </ul>
   }
   
   <div class="link-card">
-    <p>@Html.ActionLink("back to machines list", "Index")</p>
-    <p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+     <div class="link-card">
+    @Html.ActionLink("Add engineer for machine", "AddEngineer", new { id = Model.MachineId })
+    @Html.ActionLink("Edit machine's profile", "Edit", new { id = Model.MachineId })
+    @Html.ActionLink("Delete machine's profile", "Delete", new { id = Model.MachineId })
+    <br />
+    @Html.ActionLink("Back to all machines list", "Index")
+    @Html.ActionLink("Back to main page", "Index", "Home")
+  </div>
   </div>
 </div>

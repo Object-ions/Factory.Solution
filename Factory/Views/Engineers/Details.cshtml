@@ -9,9 +9,8 @@
   <h2>Engineer details</h2>
   <hr />
 
-  @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name);
+  @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)
   <br>
-  <!-- @Html.DisplayNameFor(model => model.Specialty) : @Html.DisplayFor(model => model.Specialty) -->
 
   @if (@Model.JoinEntities.Count == 0)
   {
@@ -19,20 +18,21 @@
   }
   else
   {
-    <p> @Html.DisplayFor(model => model.Name) is working on: </p>
+    <p>Engineer allowed on: </p>
     <ul>
       @foreach(EngineerMachine join in Model.JoinEntities)
       {
-        <li>@join.Machine.Type</li>
+        <li>@Html.ActionLink($"{join.Machine.Type}", "Details", "Machines", new { id = join.Machine.MachineId })</li>
       }
     </ul>
   }
 
   <div class="link-card">
-    @Html.ActionLink("Edit engineer's profile", "Edit")
-    @Html.ActionLink("Delete engineer's profile", "Delete")
-    @Html.ActionLink("Back to all engineers list", "Index")
+    @Html.ActionLink("Add machine for engineer", "AddMachine", new { id = Model.EngineerId })
+    @Html.ActionLink("Edit engineer's profile", "Edit", new { id = Model.EngineerId })
+    @Html.ActionLink("Delete engineer's profile", "Delete", new { id = Model.EngineerId })
     <br />
+    @Html.ActionLink("Back to all engineers list", "Index")
     @Html.ActionLink("Back to main page", "Index", "Home")
   </div>
 
