@@ -10,14 +10,16 @@
   {
     <p>No engineers have been added yet</p>
   }
+  <ul>
+    @foreach (Engineer engineer in Model)
+    {
+      <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
+    }
+  </ul>
 
-  @foreach (Engineer engineer in Model)
-  {
-    <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId })</li>
-  }
-</div>
-
-<div class="link-card">
-  <p>@Html.ActionLink("Add an engineer", "Create")</p>
-  <p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+  <div class="link-card">
+    <p>@Html.ActionLink("Add an engineer", "Create")</p>
+    <p>@Html.ActionLink("Main Page", "Index", "Home")</p>
+  </div>
+  
 </div>
