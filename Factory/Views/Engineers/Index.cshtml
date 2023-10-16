@@ -5,7 +5,7 @@
 @using Factory.Models;
 
 <div class="container">
-  <h2> Engineers </h2>
+  <h2> Engineer's List</h2>
   @if (@Model.Count == 0)
   {
     <p>No engineers have been added yet</p>
@@ -19,7 +19,6 @@
 
   <div class="link-card">
     <p>@Html.ActionLink("Add an engineer", "Create")</p>
-    <p>@Html.ActionLink("Main Page", "Index", "Home")</p>
   </div>
   
 </div>

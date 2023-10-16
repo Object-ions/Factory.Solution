@@ -14,7 +14,7 @@
   {
     <input type="submit" value="Yes, delete profile" />
     }
-    @Html.ActionLink($"No, back to {@Html.DisplayFor(model => model.Type)} profile", "Details", new { id = Model.MachineId })
+    @Html.ActionLink("Back to machine's profile", "Details", new { id = Model.MachineId })
 
   <div class="link-card">
     @Html.ActionLink("Show all Machines", "Index")

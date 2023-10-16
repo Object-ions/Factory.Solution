@@ -12,13 +12,8 @@
   @Html.DisplayFor(model => model.Name)
   @using (Html.BeginForm())
   {
-    <input type="submit" value="Yes, delete profile" />
-    }
-    @Html.ActionLink($"No, back to {@Html.DisplayFor(model => model.Name)} profile", "Details", new { id = Model.EngineerId })
-
-  <div class="link-card">
-    @Html.ActionLink("Show all engineers", "Index")
-    @Html.ActionLink("Main Page", "Index", "Home")
-  </div>
+    <input type="submit" value="Yes, delete Profile" />
+  }
+    @Html.ActionLink("back to engineer's profile", "Details", new { id = Model.EngineerId })
 
 </div>

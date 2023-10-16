@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
+    @await Html.PartialAsync("Header")
+    
     @RenderBody()
+
+    @await Html.PartialAsync("Footer")
   </body>
 </html>
