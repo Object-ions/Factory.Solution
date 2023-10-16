@@ -11,6 +11,7 @@
     @if (Model["engineers"].Length == 0)
     {
       <p>No engineers have been added yet!</p>
+      <p>@Html.ActionLink("Add an engineer", "Create", "Engineers")</p>
     } 
     <ul>
       @foreach (Engineer engineer in Model["engineers"])
@@ -25,6 +26,7 @@
     @if (Model["machines"].Length == 0)
     {
       <p>No machines have been added yet!</p>
+      <p>@Html.ActionLink("Add an machine", "Create", "Machines")</p>
     } 
     <ul>
       @foreach (Machine machine in Model["machines"])

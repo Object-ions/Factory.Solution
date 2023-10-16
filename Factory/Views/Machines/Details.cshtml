@@ -27,13 +27,8 @@
   }
   
   <div class="link-card">
-     <div class="link-card">
     @Html.ActionLink("Add engineer for machine", "AddEngineer", new { id = Model.MachineId })
     @Html.ActionLink("Edit machine's profile", "Edit", new { id = Model.MachineId })
     @Html.ActionLink("Delete machine's profile", "Delete", new { id = Model.MachineId })
-    <br />
-    @Html.ActionLink("Back to all machines list", "Index")
-    @Html.ActionLink("Back to main page", "Index", "Home")
-  </div>
   </div>
 </div>
