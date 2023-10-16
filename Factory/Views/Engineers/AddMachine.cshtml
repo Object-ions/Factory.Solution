@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer;
+
+<div class="container">
+
+  <h2>Add a new machine permit</h2>
+  <hr />
+
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.EngineerId)
+
+    @Html.Label("Select machine")
+    @Html.DropDownList("MachineId")
+
+    <input type="submit" value="Save" />
+  }
+
+  <div class="link-card">
+    @Html.ActionLink("Show all engineers", "Index")
+    @Html.ActionLink("Main Page", "Index", "Home")
+  </div>
+</div>
