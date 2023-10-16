@@ -19,9 +19,9 @@
   {
     <p>This engineers are allowed on this machine:</p>
     <ul>
-      @foreach (Machine machine in Model)
+      @foreach (EngineerMachine join in Model.JoinEntities)
       {
-        <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
+        <li>@join.Machine.Name</li>
       }
     </ul>
   }

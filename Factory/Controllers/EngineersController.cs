@@ -11,7 +11,7 @@ namespace Factory.Controllers
   {
     private readonly FactoryContext _db;
 
-    public EngineerController(FactoryContext db)
+    public EngineersController(FactoryContext db)
     {
       _db = db;
     }
