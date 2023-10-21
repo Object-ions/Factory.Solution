@@ -117,7 +117,7 @@ input[type="submit"]:hover {
 select, input {
   border: 2px solid #f0f0f0;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
   display: block;
   width: 100%;
@@ -131,7 +131,7 @@ input[type="submit"] {
   border-radius: 4px;
   color: #19344d;
   font-size: 16px;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
   margin-top: 10px;
   margin-bottom: 35px;
@@ -146,6 +146,18 @@ small {
 ol,
 ul {
   list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  margin-bottom: 15px;
+}
+
+form {
+  margin: 0;
   padding: 0;
 }
 
